@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amari-port-scanner"
+version = "0.2.0"
+description = "A small, authorized-use TCP connect port scanner (standard library only)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+amari-portscan = "main:main"
+
+[tool.setuptools]
+py-modules = ["main"]
+packages = ["scanner"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
